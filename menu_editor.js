@@ -4,10 +4,7 @@
  * @author Michael Martín Moro https://github.com/Plaristote (2022, refactoring, removing jQuery dependencies)
  * @version 1.0.0
  * */
-let MenuEditor;
-
-(function() {
-MenuEditor = function(mainElement, options) {
+module.exports = function MenuEditor(mainElement, options) {
   const self = this;
   var $main = typeof mainElement == "string" ? document.querySelector("#" + mainElement) : mainElement;
   $main.dataset.level = "0";
@@ -526,6 +523,4 @@ MenuEditor = function(mainElement, options) {
     updateButtons($main);
   }
 };
-/* STATIC METHOD */
 
-}());

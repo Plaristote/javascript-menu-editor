@@ -1,0 +1,19 @@
+{
+  "name": "javascript-menu-editor",
+  "version": "1.0.0",
+  "description": "simple multi-level menu editor",
+  "main": "menu_editor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Plaristote/javascript-menu-editor.git"
+  },
+  "author": "Michael Martin Moro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Plaristote/javascript-menu-editor/issues"
+  },
+  "homepage": "https://github.com/Plaristote/javascript-menu-editor#readme"
+}

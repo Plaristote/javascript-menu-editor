@@ -17,6 +17,30 @@ Note: this README document has yet to be completely updated for this project, as
 * Fontawesome 5.3.1
 
 ## How to use
+### Using npm
+
+Install package from git repository:
+
+```
+npm install --save git+https://github.com/Plaristote/javascript-menu-editor.git
+```
+
+Import it from source:
+
+```
+import MenuEditor from "javascript-menu-editor";
+
+const editor = new MenuEditor('myEditor', { 
+  maxLevel: 2 // (Optional) Default is -1 (no level limit)
+              // Valid levels are from [0, 1, 2, 3,...N]
+});
+
+editor.setForm(document.querySelector('#frmEdit'));
+editor.setInputContainer(document.querySelector('#menuEditorForm'));
+editor.setUpdateButton(document.querySelector('#btnUpdate'));
+editor.setAddButton(document.querySelector('#btnAdd'));
+```
+
 ### Include the Css and scripts
 ```html
 <!-- the css in the <head> -->
