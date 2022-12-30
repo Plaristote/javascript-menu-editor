@@ -1,38 +1,30 @@
-# jQuery Menu Editor 1.1.0
+# Javascript Menu Editor 1.0.0
 # >>> [DEMO](https://davicotico.github.io/jQuery-Menu-Editor/)
+
+Note: this README document has yet to be completely updated for this project, as this is a modified version of the jQuery menu editor from https://github.com/davicotico/jQuery-Menu-Editor
+
 ### Features
 * Add, Update & Remove items from Menu
-* Multilevel Drag & Drop
 * Form Item Editor
-* Include IconPicker Plugin (https://victor-valencia.github.com/bootstrap-iconpicker)
 * Support to mobile devices
 * Load data from JSON string 
 * The output is a Json string
 
-This project is based on jQuery-Sortable-lists (v1.4.0) http://camohub.github.io/jquery-sortable-lists/index.html and added many features.
-
 # Documentation
 
-## Requirements
-* Bootstrap 4.x
-* jQuery >= 3.x
+## Optional requirements
+* PureCSS
 * Fontawesome 5.3.1
-* Bootstrap Iconpicker 1.10.0
 
 ## How to use
 ### Include the Css and scripts
 ```html
 <!-- the css in the <head> -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"/>
-<link rel="stylesheet" href="bootstrap-iconpicker/css/bootstrap-iconpicker.min.css">
 
 <!-- (Recommended) Just before the closing body tag </body> -->
-<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="bootstrap-iconpicker/js/iconset/fontawesome5-3-1.min.js"></script>
-<script type="text/javascript" src="bootstrap-iconpicker/js/bootstrap-iconpicker.min.js"></script>
-<script type="text/javascript" src="jquery-menu-editor.min.js"></script>
+<script type="text/javascript" src="menu-editor.min.js"></script>
 ```
 
 ### Creating the Drag & Drop list
@@ -85,16 +77,9 @@ This project is based on jQuery-Sortable-lists (v1.4.0) http://camohub.github.io
 
 ### Create and Setting the MenuEditor object
 ```javascript
-// icon picker options
-var iconPickerOptions = {searchText: "Buscar...", labelHeader: "{0}/{1}"};
-// sortable list options
-var sortableListOptions = {
-    placeholderCss: {'background-color': "#cccccc"}
-};
 var editor = new MenuEditor('myEditor', 
             { 
             listOptions: sortableListOptions, 
-            iconPicker: iconPickerOptions,
             maxLevel: 2 // (Optional) Default is -1 (no level limit)
             // Valid levels are from [0, 1, 2, 3,...N]
             });
