@@ -46,7 +46,7 @@ module.exports = function MenuEditor(mainElement, options) {
   let addButton = null;
   let inputsContainer = null;
   //let iconPickerOpt = settings.iconPicker;
-  let options = settings.listOptions;
+  options = settings.listOptions;
   //let iconPicker = $('#'+$main.id+'_icon').iconpicker(iconPickerOpt);
   //$($main).sortableLists(settings.listOptions);
 
@@ -429,8 +429,10 @@ module.exports = function MenuEditor(mainElement, options) {
 
   this.update = function(){
     const currentItem = this.getCurrentItem();
-    if (currentItem !== null)
+    if (currentItem !== null) {
       this.updateItem(currentItem);
+      settings.onChanged();
+    }
   };
 
   this.updateItem = function(item) {
