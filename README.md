@@ -21,13 +21,13 @@ Note: this README document has yet to be completely updated for this project, as
 
 Install package from git repository:
 
-```
+```sh
 npm install --save git+https://github.com/Plaristote/javascript-menu-editor.git
 ```
 
 Import it from source:
 
-```
+```javascript
 import MenuEditor from "javascript-menu-editor";
 
 const editor = new MenuEditor('myEditor', { 

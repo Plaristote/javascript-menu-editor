@@ -6,9 +6,9 @@
  * */
 module.exports = function MenuEditor(mainElement, options) {
   const self = this;
-  var $main = typeof mainElement == "string" ? document.querySelector("#" + mainElement) : mainElement;
+  let $main = typeof mainElement == "string" ? document.querySelector("#" + mainElement) : mainElement;
   $main.dataset.level = "0";
-  var settings = {
+  let settings = {
     onChanged: function() {},
     labelEdit: '<i class="fas fa-edit clickable"></i>',
     labelRemove: '<i class="fas fa-trash-alt clickable"></i>',
@@ -39,15 +39,15 @@ module.exports = function MenuEditor(mainElement, options) {
   }
   for (const key in options)
     settings[key] = options[key];
-  var itemEditing = null;
-  var sortableReady = true;
-  var form = null;
-  var updateButton = null;
-  var addButton = null;
-  var inputsContainer = null;
-  //var iconPickerOpt = settings.iconPicker;
-  var options = settings.listOptions;
-  //var iconPicker = $('#'+$main.id+'_icon').iconpicker(iconPickerOpt);
+  let itemEditing = null;
+  let sortableReady = true;
+  let form = null;
+  let updateButton = null;
+  let addButton = null;
+  let inputsContainer = null;
+  //let iconPickerOpt = settings.iconPicker;
+  let options = settings.listOptions;
+  //let iconPicker = $('#'+$main.id+'_icon').iconpicker(iconPickerOpt);
   //$($main).sortableLists(settings.listOptions);
 
   /* EVENTS */
@@ -384,8 +384,8 @@ module.exports = function MenuEditor(mainElement, options) {
       if (settings.maxLevel < 0){
           return true;
       }
-      var targetLevel = 0;
-      var liCount = $li.querySelectorAll('ul').length;
+      let targetLevel = 0;
+      let liCount = $li.querySelectorAll('ul').length;
       if ($liTarget)
         targetLevel = 0;
       else
@@ -489,13 +489,13 @@ module.exports = function MenuEditor(mainElement, options) {
     * @return String JSON menu scheme
     */
   this.getString = function () {
-      var obj = toJson($main);
+      let obj = toJson($main);
       return JSON.stringify(obj);
   };
 
   function stringToArray(str) {
       try {
-          var obj = JSON.parse(str);
+          let obj = JSON.parse(str);
       } catch (err) {
           console.log('The string is not a json valid.');
           return null;
@@ -507,7 +507,7 @@ module.exports = function MenuEditor(mainElement, options) {
     * @param {Array} Object array. The nested menu scheme
     */
   this.setData = function (strJson) {
-    var arrayItem = (Array.isArray(strJson)) ? strJson : stringToArray(strJson);
+    let arrayItem = (Array.isArray(strJson)) ? strJson : stringToArray(strJson);
     if (arrayItem !== null) {
       while ($main.lastChild) $main.removeChild($main.lastChild);
       createMenu(arrayItem);
